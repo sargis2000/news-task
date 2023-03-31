@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-9">
+  <h2>All News</h2>
+  <ul class="list-unstyled">
+    {% for news in all_news %}
+      <li class="media my-4">
+        <div class="media-body">
+
+          <h2 class="mb-2"><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></h2>
+            <h5 class="mt-0 mb-1">{{ news.main_category }}</h5>
+          <p class="mb-1">{{ news.text|truncatechars:200 }}</p>
+          <p class="mb-0 text-muted">{{ news.created_at|date:"F j, Y" }}</p>
+        </div>
+      </li>
+      <hr>
+    {% empty %}
+      <li class="text-center">
+        <p>No news available.</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+
+{% endblock %}

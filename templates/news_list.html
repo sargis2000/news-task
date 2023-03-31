@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-9">
+  {% for news in filtred_news %}
+    <div class="card mb-4">
+      <div class="card-body">
+        <h4 class="card-title">{{ news.title }}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Main category {{ news.main_category }}</h6>
+        <p class="card-text">{{ news.text|safe }}</p>
+        <p class="card-text">{{ news.created_at|date:"F j, Y" }}</p>
+        <a href="{{ news.get_absolute_url }}" class="btn btn-primary">Read more</a>
+      </div>
+    </div>
+    <br>
+    <hr>
+  {% empty %}
+    <p class="text-center">No news available.</p>
+  {% endfor %}
+</div>
+{% endblock %}
