@@ -93,3 +93,15 @@ Access the admin panel at http://localhost:8000/admin/ and log in with the super
 3) Click on the name or slug  of the category to open the editing form.
 4) Edit the name or slug of the category as needed.
 5) Click on "Save" to update the category.
+
+## Frontend
+The frontend of the news portal consists of three pages: the home page, category page and news detail page.
+
+#### Home page
+The home page displays a list of categories and a list of all news articles from all categories. To access the home page, go to http://localhost:8000/.
+
+#### Category page
+The category page displays a list of categories and a list of news articles filtered by the selected category. To access a category page, click on a category name on the home page. The selected category will be highlighted.
+
+#### News detail page
+The news detail page displays the title, content and categories of a news article. To access a news detail page, click on a news title on the home or category page.
